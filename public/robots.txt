@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap konumu
+Sitemap: https://mskcode.com/sitemap.xml
+
+# Önemli sayfalar
+Allow: /about
+Allow: /services
+Allow: /brands
+Allow: /references
+Allow: /contact
+
+# Admin paneli gizli
+Disallow: /admin
+
+# Crawl delay (saniye)
+Crawl-delay: 1
+
+# Host bilgisi
+Host: https://mskcode.com 

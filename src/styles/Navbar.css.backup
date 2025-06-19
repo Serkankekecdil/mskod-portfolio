@@ -1,0 +1,832 @@
+/* Ultra-Modern Navbar Styles - MSK Logo Uyumlu Renk Paleti */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+  box-shadow: 
+    0 8px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1),
+    0 0 60px rgba(255, 215, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  height: 80px;
+  background: rgba(15, 12, 30, 0.95);
+  backdrop-filter: blur(30px);
+  box-shadow: 
+    0 12px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 215, 0, 0.15),
+    0 0 80px rgba(255, 215, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 25px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 53, 0.1));
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  opacity: 0;
+  transition: all 0.6s ease;
+  animation: none;
+}
+
+.logo:hover::before {
+  opacity: 1;
+}
+
+.logo:hover::after {
+  opacity: 1;
+  animation: logoRotate 2s linear infinite;
+}
+
+.logo:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 15px 40px rgba(255, 215, 0, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  border-color: rgba(255, 215, 0, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-logo {
+  height: 60px;
+  width: auto;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.logo:hover .nav-logo {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Neuromorphic Hover Effect - Enhanced */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    rgba(255, 215, 0, 0.6), 
+    rgba(255, 152, 0, 0.6), 
+    rgba(255, 107, 53, 0.6),
+    rgba(233, 30, 99, 0.6),
+    rgba(156, 39, 176, 0.6),
+    rgba(33, 150, 243, 0.6),
+    rgba(255, 215, 0, 0.6)
+  );
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  border-radius: 27px;
+  z-index: -2;
+  filter: blur(3px);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 30, 0.9);
+  border-radius: 25px;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+/* Particle Effect on Hover */
+.nav-links a:hover::before {
+  opacity: 1;
+  animation: gradientShift 2s ease infinite;
+  background-size: 400% 400%;
+}
+
+.nav-links a:hover::after {
+  background: rgba(25, 25, 35, 0.85);
+  backdrop-filter: blur(20px);
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.4),
+    0 5px 15px rgba(255, 215, 0, 0.2);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+/* Active Link State */
+.nav-links a.active {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffffff;
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 8px 25px rgba(255, 215, 0, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.nav-links a.active::before {
+  opacity: 0.7;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Mobile Menu Button */
+.menu-button {
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    rgba(255, 215, 0, 0.5), 
+    rgba(255, 107, 53, 0.5), 
+    rgba(255, 215, 0, 0.5)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 22px;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+.menu-button:hover::before {
+  opacity: 1;
+  animation: gradientShift 2s ease infinite;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(255, 215, 0, 0.3);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.menu-icon {
+  width: 24px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  position: relative;
+}
+
+.menu-icon span::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    rgba(255, 215, 0, 0.8), 
+    rgba(255, 107, 53, 0.8)
+  );
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-button:hover .menu-icon span {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.menu-button:hover .menu-icon span::after {
+  opacity: 1;
+}
+
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+    background: rgba(20, 20, 30, 0.9);
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    height: 50px;
+    padding: 0.5rem;
+  }
+
+  .nav-logo {
+    height: 40px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(15, 12, 30, 0.95);
+    backdrop-filter: blur(30px);
+    padding: 2rem 1rem;
+    gap: 1.2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 
+      0 15px 50px rgba(0, 0, 0, 0.4),
+      0 0 80px rgba(255, 215, 0, 0.1);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 1rem;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.5rem;
+  }
+  
+  .nav-links {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Enhanced Animations */
+@keyframes logoRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes navbarSlideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scroll Animation Enhancement */
+@media (prefers-reduced-motion: no-preference) {
+  .navbar {
+    animation: navbarSlideDown 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Navbar Styles - MSK Logo Uyumlu Renk Paleti */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 18, 40, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background: rgba(20, 23, 45, 0.95);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo-symbol {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    transform: scale(1.05);
+  }
+}
+
+.symbol-arc {
+  position: absolute;
+  border-radius: 50%;
+  animation: rotateArc 6s linear infinite;
+}
+
+.arc-1 {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #FFD700;
+  border-right: 2px solid #FF9800;
+  animation-duration: 3s;
+}
+
+.arc-2 {
+  width: 28px;
+  height: 28px;
+  border: 2px solid transparent;
+  border-right: 2px solid #FF6B35;
+  border-bottom: 2px solid #E91E63;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+.arc-3 {
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-left: 1px solid #9C27B0;
+  border-top: 1px solid #2196F3;
+  animation-duration: 5s;
+}
+
+.symbol-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #FFD700 0%, #FF6B35 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes rotateArc {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+.logo-image {
+  height: 80px;
+  max-width: 140px;
+  margin-left: 1rem;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
+.nav-logo:hover .logo-symbol {
+  transform: scale(1.1);
+}
+
+.nav-logo:hover .logo-image {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link:hover {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.nav-link.active {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Mobile Menu Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #FF6B35);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .logo-image {
+    height: 55px;
+    max-width: 120px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(15, 18, 40, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 12px;
+  padding: 0.5rem 0.8rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 40px;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Language Toggle Button */
+.language-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 12px;
+  padding: 0.5rem 0.8rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 40px;
+}
+
+.language-toggle:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Dark Theme Styles */
+:root.dark-theme {
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #1a1a2e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent-color: #FFD700;
+}
+
+.dark-theme .navbar {
+  background: rgba(5, 5, 15, 0.95);
+  border-bottom-color: rgba(255, 215, 0, 0.2);
+}
+
+.dark-theme .navbar.scrolled {
+  background: rgba(10, 10, 20, 0.98);
+}
+
+.dark-theme .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-theme .nav-link:hover {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.15);
+}
+
+/* Mobile responsive for new buttons */
+@media (max-width: 768px) {
+  .theme-toggle,
+  .language-toggle {
+    margin: 0.5rem 0;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+  }
+}
+
+/* Hover'da daha güçlü glow efekti */
+filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+
+/* Hover'da daha güçlü glow efekti */
+filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)); 
