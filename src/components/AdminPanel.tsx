@@ -37,7 +37,10 @@ const AdminPanel: React.FC = () => {
   }, [activeTab]);
 
   const handleLogin = () => {
-    if (password === '1343114643') {
+    // Şifre environment variable'dan alınacak
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'msk2024admin!';
+    
+    if (password === adminPassword) {
       setIsAuthenticated(true);
       setPassword('');
       // localStorage'a kaydet

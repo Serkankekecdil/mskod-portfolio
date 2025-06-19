@@ -16,4 +16,15 @@ declare module '*.png' {
 declare module '*.svg' {
   const content: string;
   export default content;
+}
+
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_ADMIN_PASSWORD: string
+  // Diğer env variables buraya eklenebilir
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
 } 
